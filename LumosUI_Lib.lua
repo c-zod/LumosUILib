@@ -1741,11 +1741,14 @@ function LumosLibrary:CreateWindow(Settings)
 			Button.BackgroundTransparency = 1
 			Button.UIStroke.Transparency = 1
 			Button.Title.TextTransparency = 1
+			
+			if ButtonSettings.Color then
+				Button.Title.TextColor3 = ButtonSettings.Color
+			end
 
 			TweenService:Create(Button, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {BackgroundTransparency = 0}):Play()
 			TweenService:Create(Button.UIStroke, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {Transparency = 0}):Play()
 			TweenService:Create(Button.Title, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {TextTransparency = 0}):Play()	
-
 
 			Button.Interact.MouseButton1Click:Connect(function()
 				local Success, Response = pcall(ButtonSettings.Callback)
@@ -1783,9 +1786,12 @@ function LumosLibrary:CreateWindow(Settings)
 				TweenService:Create(Button.ElementIndicator, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {TextTransparency = 0.9}):Play()
 			end)
 
-			function ButtonValue:Set(NewButton)
-				Button.Title.Text = NewButton
-				Button.Name = NewButton
+			function ButtonValue:Set(NewButtonSettings)
+				Button.Title.Text = NewButtonSettings.Name
+				Button.Name = NewButtonSettings.Name
+				if NewButtonSettings.Color then
+					Button.Title.TextColor3 = NewButtonSettings.Color
+				end
 			end
 
 			return ButtonValue
