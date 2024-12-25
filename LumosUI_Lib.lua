@@ -2184,6 +2184,9 @@ function LumosLibrary:CreateWindow(Settings)
 
 			local Paragraph = Elements.Template.Paragraph:Clone()
 			Paragraph.Title.Text = ParagraphSettings.Title
+			if ParagraphSettings.Color then
+				Paragraph.Title.TextColor3 = ParagraphSettings.Color
+			end
 			Paragraph.Content.Text = ParagraphSettings.Content
 			Paragraph.Visible = true
 			Paragraph.Parent = TabPage
@@ -2204,6 +2207,9 @@ function LumosLibrary:CreateWindow(Settings)
 			function ParagraphValue:Set(NewParagraphSettings)
 				Paragraph.Title.Text = NewParagraphSettings.Title
 				Paragraph.Content.Text = NewParagraphSettings.Content
+				if NewParagraphSettings.Color then
+					Paragraph.Title.TextColor3 = NewParagraphSettings.Color
+				end
 			end
 
 			Lumos.Main:GetPropertyChangedSignal('BackgroundColor3'):Connect(function()
