@@ -474,8 +474,6 @@ repeat
 until buildAttempts >= 2
 
 Lumos.Enabled = false
-Lumos.ZIndexBehaviour = Enum.ZIndexBehavior.Sibling
-Lumos.DisplayOrder = 1000000000
 
 if gethui then
 	Lumos.Parent = gethui()
@@ -532,11 +530,12 @@ local dragBarCosmetic = dragBar and dragBar.Drag or nil
 local dragOffset = 255
 local dragOffsetMobile = 150
 
-Lumos.DisplayOrder = 100
+Lumos.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Lumos.DisplayOrder = 101
 LoadingFrame.Version.Text = Release
 
 
-local Icons = useStudio and require(script.Parent.icons) or loadstring(game:HttpGet('https://raw.githubusercontent.com/SiriusSoftwareLtd/Lumos/refs/heads/main/icons.lua'))()
+local Icons = useStudio and require(script.Parent.icons) or loadstring(game:HttpGet('https://raw.githubusercontent.com/SiriusSoftwareLtd/Rayfield/refs/heads/main/icons.lua'))()
 
 -- Variables
 
