@@ -2930,6 +2930,7 @@ function LumosLibrary:CreateWindow(Settings)
 			Slider.BackgroundTransparency = 1
 			Slider.UIStroke.Transparency = 1
 			Slider.Title.TextTransparency = 1
+			Slider.Main.Progress:FindFirstChildOfClass("UICorner").CornerRadius = Vector2.new(0,0)
 
 			if SelectedTheme ~= LumosLibrary.Theme.Default then
 				Slider.Main.Shadow.Visible = false
