@@ -15,8 +15,8 @@ Max   | Programming
 
 
 
-local InterfaceBuild = '1VEX'
-local Release = "Build 1.55"
+local InterfaceBuild = '9NBD'
+local Release = "Build 1.65"
 local LumosFolder = "Lumos"
 local ConfigurationFolder = LumosFolder.."/Configurations"
 local ConfigurationExtension = ".rfld"
@@ -1741,7 +1741,7 @@ function LumosLibrary:CreateWindow(Settings)
 			Button.BackgroundTransparency = 1
 			Button.UIStroke.Transparency = 1
 			Button.Title.TextTransparency = 1
-			
+
 			if ButtonSettings.Color then
 				Button.Title.TextColor3 = ButtonSettings.Color
 			end
@@ -2939,12 +2939,12 @@ function LumosLibrary:CreateWindow(Settings)
 			Slider.Main.UIStroke.Color = SelectedTheme.SliderStroke
 			Slider.Main.Progress.UIStroke.Color = SelectedTheme.SliderStroke
 			Slider.Main.Progress.BackgroundColor3 = SelectedTheme.SliderProgress
-			
+
 			if SliderSettings.Color then
 				local pg = Slider.Main.Progress
 				Slider.Main.BackgroundColor3 = SliderSettings.Color
 				pg.BackgroundColor3 = SliderSettings.Color
-				
+
 				Slider.Main:FindFirstChildOfClass("UIStroke").Color = SliderSettings.Color
 				pg:FindFirstChildOfClass("UIStroke").Color = SliderSettings.Color
 			end
@@ -3254,7 +3254,6 @@ Topbar.Search.MouseButton1Click:Connect(function()
 		end
 	end)
 end)
-
 
 Topbar.Hide.MouseButton1Click:Connect(function()
 	setVisibility(Hidden, not useMobileSizing)
